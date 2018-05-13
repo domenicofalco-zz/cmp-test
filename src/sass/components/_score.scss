@@ -1,0 +1,68 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.score {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @include mqmin($viewportS) {
+    display: block;
+  }
+}
+
+.score__total {
+  height: 32px;
+  width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $grey7;
+  box-sizing: border-box;
+  font-weight: bold;
+  font-size: 13px;
+
+  @include mqmin($viewportS) {
+    height: 43px;
+    width: 64px;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+}
+
+.score__vote {
+  display: flex;
+
+  img {
+    display: block;
+    width: 16px;
+  }
+}
+
+.score__like {
+  background-color: $lightGreen;
+
+  @include mqmin($viewportS) {
+    margin-right: 4px;
+  }
+}
+
+.score__dislike {
+  background-color: $grey5;
+}
+
+.score__like,
+.score__dislike {
+  display: flex;
+  height: 32px;
+  width: 44px;
+  align-items: center;
+  justify-content: center;
+
+  @include mqmin($viewportS) {
+    height: 24px;
+    width: 30px;
+    font-size: 20px;
+  }
+}

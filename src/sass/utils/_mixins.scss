@@ -1,0 +1,35 @@
+@import './variables';
+
+// media queries
+@mixin mqmax($max, $media: all) {
+  @media #{$media} and (max-width: $max + 0px) {
+    @content;
+  }
+}
+
+@mixin mqmin($min, $media: all) {
+  @media #{$media} and (min-width: $min + 0px) {
+    @content;
+  }
+}
+
+// containers
+@mixin container {
+  $spaceAround: 20px;
+  width: calc(100% - #{$spaceAround * 2});
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+  max-width: $container;
+}
+
+// clearFix
+@mixin clearFix {
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}

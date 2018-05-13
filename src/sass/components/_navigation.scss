@@ -1,0 +1,97 @@
+.navigation {
+  @include mqmin($viewportS) {
+    float: right;
+  }
+}
+
+.navigation__toggle {
+  float: right;
+  margin-top: 4px;
+  font-size: 25px;
+  display: block;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: $grey3;
+  outline: none;
+  position: relative;
+  z-index: 3;
+  background: transparent;
+
+  &--on {
+    color: $white;
+  }
+
+  @include mqmin($viewportS) {
+    display: none;
+  }
+}
+
+.navigation__list {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(124deg, #7ac49d 0%, #56adb6 51%, #2992d6 85%);
+  z-index: 2;
+  flex-direction: column;
+  justify-content: center;
+
+  &--isopen {
+    display: flex;
+  }
+
+  @include mqmin($viewportS) {
+    @include clearFix;
+    display: block;
+    padding: 10px 0;
+    position: static;
+    background: none;
+  }
+}
+
+.navigation__item {
+  text-transform: uppercase;
+  font-size: 25px;
+  margin: 16px 0;
+  
+  a {
+    color: $white;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+  }
+
+  @include mqmin($viewportS) {
+    $space: 8px;
+    margin: 0 $space 0 0;
+    padding-right: $space;
+    border-right: 1px solid $grey1;
+    float: left;
+    display: block;
+    text-transform: uppercase;
+    font-size: 13px; 
+    
+    &:last-child {
+      border: none;
+    }
+    
+    a {
+      color: $grey1;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.navigation__item--active {
+  font-weight: bold;
+  @include mqmin($viewportS) {
+    border-width: 2px;
+  }
+}

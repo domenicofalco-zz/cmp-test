@@ -1,0 +1,28 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+
+.video-info {
+  @include mqmin($viewportS) {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}
+
+.video-info__details {
+  color: $grey4;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+
+  a {
+    color: $lightBlue;
+    text-decoration: none;
+  }
+  
+  @include mqmin($viewportS) {
+    margin-left: 20px;
+  }
+}

@@ -1,0 +1,19 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.stage-caption {
+  margin-bottom: 40px;
+}
+
+.stage-caption__title {
+  font-size: $primary-title-size;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: $grey1;
+}
+
+.stage-caption__descr {
+  color: $grey4;
+  font-size: 13px;
+  line-height: 1.5;
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icons/bdvr/menu/sandwich_b</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="bdvr/nav/header/inner/mobile/standby" transform="translate(-276.000000, -18.000000)" stroke="#333333">
+            <g id="sandwhich_b" transform="translate(276.000000, 18.000000)">
+                <g id="icons/bdvr/menu/black">
+                    <path d="M2.5,19.5 L22,19.5" id="Line-Copy-2"></path>
+                    <path d="M2.5,11.5 L22,11.5" id="Line-Copy-3"></path>
+                    <path d="M2.5,3.5 L22,3.5" id="Line-Copy-4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

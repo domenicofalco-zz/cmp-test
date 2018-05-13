@@ -1,0 +1,47 @@
+@import '../utils/variables';
+
+.stage {
+  position: relative;
+
+  @include mqmin($viewportM) {
+    max-width: 65%;
+  }
+}
+
+.stage__preview {
+  position: relative;
+  z-index: 1;
+
+  img {
+    width: 100%;
+    display: block;
+  }
+}
+
+.stage__play {
+  $size: 80;
+  width: $size * 1px;
+  height: $size  * 1px;
+  border: none;
+  background: rgba(0, 0, 0, .3);
+  border-radius: 50%;
+  font-size: 40px;
+  color: $white;
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  cursor: pointer;
+  left: 50%;
+  margin: ($size/2 * -1px) 0 0 ($size/2 * -1px);
+  transition: background .3s;
+
+  &:hover {
+    background: rgba(0, 0, 0, .6);
+  }
+
+  i {
+    position: relative;
+    left: 2px;
+    top: 2px;
+  }
+}

@@ -1,0 +1,112 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.footer {
+  background-color: $grey1;
+  font-size: 13px;
+  width: 100%;
+}
+
+.footer__container {
+  @include container;
+  padding: 20px 0;
+  @include mqmin($viewportS) {
+    padding: 35px 0 20px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  text-align: center;
+  @include mqmin($viewportS) {
+    margin-bottom: 0;
+    text-align: left;
+    flex-direction: row;
+    justify-content: space-between
+  }
+}
+
+.footer__nav__list {
+  margin-bottom: 25px;
+  order: 2;
+  @include mqmin($viewportS) {
+    order: 1;
+    margin-bottom: 0;
+  }
+}
+
+.footer__nav__list--social {
+  order: 1;
+  @include mqmin($viewportS) {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    order: 2;
+    flex-wrap: wrap;
+  }
+}
+
+.footer__nav__item--social {
+  @include mqmin($viewportS) {
+    width: calc(50% - 20px);
+  }
+}
+
+.footer__nav__item {
+  margin-bottom: 10px;
+  display: block;
+
+  a {
+    text-decoration: none;
+    color: $grey4;
+  }
+}
+
+.footer__nav__item--social {
+  margin-bottom: 15px;
+
+  i {
+    color: $white;
+    border-radius: 50%;
+    padding: 5px;
+    margin-right: 5px;
+  }
+  .icon-facebook2 {
+    background: $facebook;
+  }
+
+  .icon-instagram {
+    background: $instagram;
+  }
+
+  .icon-twitter {
+    background: $twitter;
+  }
+
+  .icon-youtube {
+    background: $youtube;
+  }
+
+  .icon-tumblr {
+    background: $tumblr;
+  }
+
+  a {
+    color: $grey5
+  }
+}
+
+.footer__copyright {
+  $height: 45px;
+  height: $height;
+  line-height: $height;
+  font-size: 13px;
+  background-color: $black;
+  display: block;
+  width: 100%;
+  text-align: center;
+  color: $grey4;
+}
