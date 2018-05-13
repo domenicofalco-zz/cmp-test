@@ -1,4 +1,4 @@
-export default {
+const config = {
     server: {
         port: 8000
     },
@@ -26,3 +26,5 @@ export default {
         babel: { presets: ['es2015', 'stage-0'] }
     }
 };
+
+module.exports = config;

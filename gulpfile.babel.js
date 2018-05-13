@@ -1,25 +1,26 @@
 
- import base64 from 'gulp-base64';
- import browserSync, { reload }  from 'browser-sync';
- import cssbeautify  from 'gulp-cssbeautify';
- import cssnano  from 'gulp-cssnano';
- import cache from 'gulp-cached';
- import del from 'del';
- import gulp  from 'gulp';
- import gulpIf  from 'gulp-if';
- import imagemin  from 'gulp-imagemin';
- import path from 'path';
- import pngquant  from 'imagemin-pngquant';
- import postcss  from 'gulp-postcss';
- import sass  from 'gulp-sass';
- import sourcemaps  from 'gulp-sourcemaps';
- import ttf2woff  from 'gulp-ttf2woff';
- import ttf2woff2  from 'gulp-ttf2woff2';
- import watch  from 'gulp-watch';
- import webpack from 'webpack';
- import webpackStream  from 'webpack-stream';
- import config from './config.js';
- import { argv } from 'yargs';
+ const base64 = require('gulp-base64');
+ const browserSync = require('browser-sync');
+ const reload = require('browser-sync').reload;
+ const cssbeautify = require('gulp-cssbeautify');
+ const cssnano = require('gulp-cssnano');
+ const cache = require('gulp-cached');
+ const del = require('del');
+ const gulp = require('gulp');
+ const gulpIf = require('gulp-if');
+ const imagemin = require('gulp-imagemin');
+ const path= require('path');
+ const pngquant = require('imagemin-pngquant');
+ const postcss = require('gulp-postcss');
+ const sass = require('gulp-sass');
+ const sourcemaps = require('gulp-sourcemaps');
+ const ttf2woff = require('gulp-ttf2woff');
+ const ttf2woff2 = require('gulp-ttf2woff2');
+ const watch = require('gulp-watch');
+ const webpack = require('webpack');
+ const webpackStream = require('webpack-stream');
+ const config = require('./config.js');
+ const argv = require('yargs').argv;
  const { srcDir, buildDir, distDir, cssDir, imgDir, sassDir, fontsDir, jsDir } = config.dir;
 
  const stream = argv.watch ? true : false;
@@ -94,7 +95,7 @@
  gulp.task('js', () => {
      let entry = {};
      config.javascript.entry.map(item => {
-         entry = { ...entry, [item]: `${config.dir.srcDir}${config.dir.jsDir}${item}` };
+         entry = { entry: 'index.js', [item]: `${config.dir.srcDir}${config.dir.jsDir}${item}` };
      });
 
      gulp.src(`${srcDir + jsDir}*.js`)
@@ -110,7 +111,7 @@
                  modulesDirectories: [
                      'node_modules',
                      'src/js/',
-                     'src/js/vendors',
+                     'src/js/components',
                      'src/js/utils'
                  ]
              },
